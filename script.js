@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let dataset = "strike"; 
 
     function fetchAndRenderGraph(algo) {
-        const filePath = `/data/${dataset}_${algo}.json`;
+        const filePath = `https://ekmpa.github.io/Network-Science/public/data/${dataset}_${algo}.json`;
 
         fetch(filePath)
             .then(response => response.json())
