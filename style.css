@@ -1,7 +1,14 @@
 
+* {
+    font-family: "Poppins", sans-serif;
+}
+
+a {
+    color: rgb(91, 91, 91);
+    font-size: smaller;
+}
 
 body {
-    font-family: "Poppins", sans-serif;
     margin: 0;
     padding: 0;
 }
@@ -21,9 +28,19 @@ body {
     padding: 20px;
 }
 .column {
-    flex: 1;
+    /*flex: 1;*/
     padding: 10px;
 }
+
+.column:first-child {
+    flex: 1; 
+}
+
+.column:last-child {
+    flex: 2;  
+}
+
+
 .column img {
     max-width: 100%;
     height: auto;
@@ -36,14 +53,29 @@ body {
     text-align: center;
     flex-wrap: wrap;
     padding: 5px;
+    
 }
 
 .algo {
-    padding: 15px;
+    padding: 10px;
     border: 2px solid;
     border-radius: 20px;
     background-color: white;
     box-shadow: 5px 5px;
+    margin-right: 10px;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.algo:hover {
+    background-color: #f0f0f0;
+}
+
+.algo.active {
+    background-color: black;
+    border: 5px double;
+    color: white;
 }
 
 @media (max-width: 768px) {
