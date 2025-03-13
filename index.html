@@ -71,9 +71,22 @@
     <div class="container">
         <div class="column" style="padding-left: 20px">
             <h3>Spectral Graph based on the Laplacian</h3>
+
+            The 
+            <a href="http://konect.cc/networks/opsahl-powergrid/" style="font-size: medium;">
+                OPSAHL-Powergrid U.S Dataset</a> provides insights about  
+            U.S power supply lines. 
+
+            <br><br> 
+            Computing its <a href="https://people.orie.cornell.edu/dpw/orie6334/Fall2016/lecture7.pdf" style="font-size: medium;">
+                normalized Laplacian matrix</a>, we use its second and third 
+                eigenvalues for node placement, thus visualizing the data in a spectral layout. 
+            
+            <br><br> The denser central region indicate a core of structurally similar nodes,
+            while the sprawling branches underscore smaller subnetworks, aligning with an expected power-grid network structure. 
         </div>
         
-        <div class="column">
+        <div class="column" style="padding-left: 50px">
             <div id="spectral-laplacian"></div>
         </div>
     </div>

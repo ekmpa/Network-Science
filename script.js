@@ -122,10 +122,10 @@ document.addEventListener("DOMContentLoaded", function () {
   function renderSpectralGraph(nodes) {
     d3.select("#spectral-laplacian").html(""); 
 
-    const width = 600, height = 250;
+    const width = 900, height = 350;
 
-    // For rapidité
-    nodes = nodes.filter(() => Math.random() > 0.55);
+    // For rapidité, 50%
+    nodes = nodes.filter(() => Math.random() > 0.50);
     
     const svg = d3.select("#spectral-laplacian")
         .append("svg")
