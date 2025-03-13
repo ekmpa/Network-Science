@@ -1,19 +1,19 @@
 document.addEventListener("DOMContentLoaded", function () {
     const graphContainer = document.getElementById("graph-container");
-    const buttons = document.querySelectorAll(".algo");
+    const algoButtons = document.querySelectorAll(".algo");
+    const datasetButtons = document.querySelectorAll(".dataset");
 
-    // default: strike_louvain (for now)
     let currentAlgo = "louvain"; 
-    let dataset = "strike"; 
+    let currentDataset = "strike"; 
 
-    function fetchAndRenderGraph(algo) {
-        const filePath = `https://ekmpa.github.io/Network-Science/public/data/${dataset}_${algo}.json`;
+    function fetchAndRenderGraph() {
+        const filePath = `https://ekmpa.github.io/Network-Science/public/data/${currentDataset}_${currentAlgo}.json`;
 
         fetch(filePath)
             .then(response => response.json())
             .then(data => {
                 processGraphData(data);
-                updateActiveButton(algo); 
+                updateActiveButtons();
             })
             .catch(error => console.error("Error fetching graph data:", error));
     }
@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function renderGraph(nodes, links) {
         d3.select("#graph-container").html("");
 
-        const width = 350, height = 250;
+        const width = 600, height = 250;
         const color = d3.scaleOrdinal(d3.schemeCategory10);
 
         const svg = d3.select("#graph-container")
@@ -110,25 +110,35 @@ document.addEventListener("DOMContentLoaded", function () {
             .on("end", dragEnded);
     }
 
-    function updateActiveButton(selectedAlgo) {
-        buttons.forEach(button => {
-            if (button.getAttribute("data-algo") === selectedAlgo) {
-                button.classList.add("active"); 
-            } else {
-                button.classList.remove("active");
-            }
+    function updateActiveButtons() {
+        algoButtons.forEach(button => {
+            button.classList.toggle("active", button.getAttribute("data-algo") === currentAlgo);
+        });
+
+        datasetButtons.forEach(button => {
+            button.classList.toggle("active", button.getAttribute("data-dataset") === currentDataset);
         });
     }
 
-    buttons.forEach(button => {             // event listeners on buttons
+    algoButtons.forEach(button => {
         button.addEventListener("click", function () {
             const algo = this.getAttribute("data-algo");
             if (algo !== currentAlgo) {
                 currentAlgo = algo;
-                fetchAndRenderGraph(currentAlgo);
+                fetchAndRenderGraph();
             }
         });
     });
 
-    fetchAndRenderGraph(currentAlgo);
+    datasetButtons.forEach(button => {
+        button.addEventListener("click", function () {
+            const dataset = this.getAttribute("data-dataset");
+            if (dataset !== currentDataset) {
+                currentDataset = dataset;
+                fetchAndRenderGraph();
+            }
+        });
+    });
+
+    fetchAndRenderGraph();
 });

@@ -25,19 +25,18 @@
 
             <div id="graph-container"></div>
 
-            <div class="button-section">
-                <button class="algo" data-algo="louvain">
-                    Louvain
-                </button>
-
-                <button class="algo" data-algo="spectral">
-                    Spectral
-                </button>
-
-                <button class="algo" data-algo="girvan">
-                    G-N
-                </button>
-
+            <div class="button-box"> 
+                
+                <div class="button-section">
+                    <button class="algo" data-algo="louvain">Louvain</button>
+                    <button class="algo" data-algo="spectral">Spectral</button>
+                    <button class="algo" data-algo="girvan">G-N</button>
+                </div>
+                
+                <div class="dataset-section">
+                    <button class="dataset" data-dataset="strike">Strike</button>
+                    <button class="dataset" data-dataset="karate">Karate</button>
+                </div>
             </div>
         </div>
 
@@ -64,7 +63,7 @@
             clusters based on edge betweenness with hierarchical edge removal <a href="https://www.pnas.org/doi/full/10.1073/pnas.122653799">( GN )</a>.
             
             <br><br>
-            The three are visualized here on the Strike dataset  <a href="https://github.com/ekmpa/Network-Science/tree/main">(see code)</a>.
+            The three are visualized here on the Strike and Karate datasets  <a href="https://github.com/ekmpa/Network-Science/tree/main">(see code)</a>.
         </div>
         
     </div>

@@ -56,7 +56,12 @@ body {
     text-align: center;
     flex-wrap: wrap;
     padding: 5px;
-    
+}
+
+.button-box { 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .algo {
@@ -85,4 +90,27 @@ body {
     .container {
         flex-direction: column;
     }
+}
+
+.dataset-section { 
+    display: flex;
+    margin-top: 10px;
+}
+
+.dataset {
+    border: 0px;
+    background-color: white;
+    margin-right: 10px;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.dataset:hover {
+    background-color: #f0f0f0;
+}
+
+.dataset.active {
+    background-color: black;
+    color: white;
 }
