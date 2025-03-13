@@ -155,7 +155,7 @@ document.addEventListener("DOMContentLoaded", function () {
         .data(nodes)
         .enter().append("circle")
         .attr("r", 2)
-        .attr("fill", "#2659ff")
+        .attr("fill", "#c400a4")
         .call(drag(simulation));
 
     function ticked() {

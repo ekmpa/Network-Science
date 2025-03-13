@@ -116,3 +116,13 @@ body {
     background-color: black;
     color: white;
 }
+
+footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
