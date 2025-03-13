@@ -20,7 +20,9 @@ body {
 }
 
 .header h1 {
-    font-family: 'Courier New', Courier, monospace;
+    font-family: "Jersey 10 Charted";
+    font-size: 60px;
+    font-weight: 200;
 }
 
 .container {
