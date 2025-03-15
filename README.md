@@ -7,4 +7,6 @@ See demos [here](https://ekmpa.github.io/Network-Science/).
 - Diffusion simulator / SIR model
 - Link prediction (visualize the performance w green v. red edges)
 - DeepWalk?
+
++ need to update the collab (.py)
 -->
